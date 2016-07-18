@@ -4,7 +4,7 @@
 
 package:
   name: ulmo
-  version: {{ 0.8.3.1 }}
+  version: {{ version }}
 
 source:
   fn: ulmo-{{ version }}.tar.gz
@@ -66,7 +66,7 @@ test:
 
 about:
   home: https://github.com/ulmo-dev/ulmo
-  license: BSD
+  license: BSD 3-Clause
   summary: 'Clean, simple, and fast access to public hydrology and climatology data'
   doc_url: http://ulmo.readthedocs.io/
   dev_url: https://github.com/ulmo-dev/ulmo/
