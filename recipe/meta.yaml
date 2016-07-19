@@ -1,70 +1,77 @@
+# Jinja variables help maintain the recipe as you'll update the version only here.
+{% set version = "0.8.3.1" %}
+{% set sha256 = "4b0f5a5b4828915d973d3cbb86372aea9207e7b60fed912045d69242a74407f6" %}
+
 package:
-    name: ulmo
-    version: 0.8.2
+  name: ulmo
+  version: {{ version }}
 
 source:
-    fn: ulmo-0.8.2.tar.gz
-    url: https://pypi.python.org/packages/source/u/ulmo/ulmo-0.8.2.tar.gz
-    md5: 90e6d45effd57528a4a32bfb65b640ca
+  fn: ulmo-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/u/ulmo/ulmo-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - appdirs
-        - beautifulsoup4
-        - future
-        - geojson
-        - isodate
-        - numpy
-        - pandas
-        - pytables
-        - requests
-        - suds-jurko
-        - lxml
-        - mock  # [not py35]
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - appdirs
+    - beautifulsoup4
+    - future
+    - geojson
+    - isodate
+    - lxml
+    - mock
+    - numpy
+    - pandas
+    - pytables
+    - pytest
+    - requests
+    - suds-jurko
+    - freezegun
+    - html5lib <=0.9999999
 
 test:
-    imports:
-        - ulmo.usgs.nwis
-        - ulmo.cdec.historical
-        - ulmo.util
-        - ulmo.waterml
-        - ulmo.ncdc
-        - ulmo.cpc
-        - ulmo.cuahsi
-        - ulmo.cpc.drought
-        - ulmo.ncdc.gsod
-        - ulmo.usgs.eddn
-        - ulmo.ncdc.cirs
-        - ulmo.twc
-        - ulmo.cuahsi.his_central
-        - ulmo.usgs
-        - ulmo.usace.rivergages
-        - ulmo
-        - ulmo.ncdc.ghcn_daily
-        - ulmo.usace.swtwc
-        - ulmo.twc.kbdi
-        - ulmo.cuahsi.wof
-        - ulmo.usace
-        - ulmo.cdec
-    requires:
-        - pytest
-        - freezegun
-        - httpretty  # [not py3k]
+  imports:
+    - ulmo.usgs.nwis
+    - ulmo.cdec.historical
+    - ulmo.util
+    - ulmo.waterml
+    - ulmo.ncdc
+    - ulmo.cpc
+    - ulmo.cuahsi
+    - ulmo.cpc.drought
+    - ulmo.ncdc.gsod
+    - ulmo.usgs.eddn
+    - ulmo.ncdc.cirs
+    - ulmo.twc
+    - ulmo.cuahsi.his_central
+    - ulmo.usgs
+    - ulmo.usace.rivergages
+    - ulmo
+    - ulmo.ncdc.ghcn_daily
+    - ulmo.usace.swtwc
+    - ulmo.twc.kbdi
+    - ulmo.cuahsi.wof
+    - ulmo.usace
+    - ulmo.cdec
+    - ulmo.nasa
+    - ulmo.lcra
 
 about:
-    home: https://github.com/ulmo-dev/ulmo/
-    license: BSD License
-    summary: Clean, simple, and fast access to public hydrology and climatology data
+  home: https://github.com/ulmo-dev/ulmo
+  license: BSD 3-Clause
+  summary: 'Clean, simple, and fast access to public hydrology and climatology data'
+  doc_url: http://ulmo.readthedocs.io/
+  dev_url: https://github.com/ulmo-dev/ulmo/
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
-        - dharhas
+  recipe-maintainers:
+    - ocefpaf
+    - dharhas
