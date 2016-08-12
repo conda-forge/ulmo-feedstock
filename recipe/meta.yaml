@@ -1,6 +1,6 @@
 # Jinja variables help maintain the recipe as you'll update the version only here.
-{% set version = "0.8.3.1" %}
-{% set sha256 = "4b0f5a5b4828915d973d3cbb86372aea9207e7b60fed912045d69242a74407f6" %}
+{% set version = "0.8.3.2" %}
+{% set sha256 = "29a77355b36b2bc77b1486b2f9cb1db2af65a3a0ba83b25b1ac2655b18c4b921" %}
 
 package:
   name: ulmo
