@@ -1,23 +1,22 @@
 {% set version = "0.8.4" %}
-{% set sha256 = "4725fb0561634169c0ba3cd6a4de055b9f941352d564e5390bd0c189e213e47f" %}
 
 package:
   name: ulmo
   version: {{ version }}
 
 source:
-  fn: ulmo-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/u/ulmo/ulmo-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 4725fb0561634169c0ba3cd6a4de055b9f941352d564e5390bd0c189e213e47f
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - appdirs
@@ -25,7 +24,7 @@ requirements:
     - future
     - geojson
     - isodate
-    - lxml
+    - lxml >=4.2.3
     - mock
     - numpy
     - pandas
