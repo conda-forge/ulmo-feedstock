@@ -1,4 +1,4 @@
-{% set version = "0.8.4" %}
+{% set version = "0.8.5" %}
 
 package:
   name: ulmo
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/u/ulmo/ulmo-{{ version }}.tar.gz
-  sha256: 4725fb0561634169c0ba3cd6a4de055b9f941352d564e5390bd0c189e213e47f
+  sha256: 356fbffaa9e339b7f2034c0fa7004bf4ca63333d6db8ddeb52bbb7b8075f7d29
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
