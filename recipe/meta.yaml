@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/u/ulmo/ulmo-{{ version }}.tar.gz
-  sha256: 356fbffaa9e339b7f2034c0fa7004bf4ca63333d6db8ddeb52bbb7b8075f7d29
+  sha256: 716ca8361563fef7f31e28b4df4c0874b50bed6b441e92803a252ea14bfde16e
 
 build:
   number: 0
