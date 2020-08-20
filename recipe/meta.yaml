@@ -64,7 +64,8 @@ test:
 
 about:
   home: https://github.com/ulmo-dev/ulmo
-  license: BSD 3-Clause
+  license: BSD-3-Clause
+  license_file: LICENSE
   summary: 'Clean, simple, and fast access to public hydrology and climatology data'
   doc_url: http://ulmo.readthedocs.io/
   dev_url: https://github.com/ulmo-dev/ulmo/
@@ -73,4 +74,3 @@ extra:
   recipe-maintainers:
     - emiliom
     - ocefpaf
-
