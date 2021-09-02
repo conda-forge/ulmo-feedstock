@@ -1,4 +1,4 @@
-{% set version = "0.8.6" %}
+{% set version = "0.8.7" %}
 
 package:
   name: ulmo
@@ -15,25 +15,20 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - appdirs
     - beautifulsoup4
     - future
     - geojson
     - isodate
-    - lxml >=4.2.3
-    - mock
+    - lxml
     - numpy
     - pandas
-    - pytables
-    - pytest
     - requests
     - suds-jurko
-    - freezegun
-    - html5lib <=0.9999999
 
 test:
   imports:
@@ -46,8 +41,8 @@ test:
     - ulmo.cuahsi
     - ulmo.cpc.drought
     - ulmo.ncdc.gsod
-    - ulmo.usgs.eddn
     - ulmo.ncdc.cirs
+    - ulmo.noaa.goes
     - ulmo.twc
     - ulmo.cuahsi.his_central
     - ulmo.usgs
