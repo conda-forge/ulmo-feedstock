@@ -1,4 +1,4 @@
-{% set version = "0.8.7" %}
+{% set version = "0.8.8" %}
 
 package:
   name: ulmo
@@ -27,6 +27,7 @@ requirements:
     - lxml
     - numpy
     - pandas
+    - python-dateutil
     - requests
     - suds-jurko
 
@@ -61,7 +62,7 @@ about:
   home: https://github.com/ulmo-dev/ulmo
   license: BSD-3-Clause
   license_file: LICENSE
-  summary: 'Clean, simple, and fast access to public hydrology and climatology data'
+  summary: Clean, simple, and fast access to public hydrology and climatology data
   doc_url: http://ulmo.readthedocs.io/
   dev_url: https://github.com/ulmo-dev/ulmo/
 
