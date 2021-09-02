@@ -1,4 +1,4 @@
-{% set version = "0.8.6" %}
+{% set version = "0.8.8" %}
 
 package:
   name: ulmo
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/u/ulmo/ulmo-{{ version }}.tar.gz
-  sha256: 716ca8361563fef7f31e28b4df4c0874b50bed6b441e92803a252ea14bfde16e
+  sha256: 6ea36b9758d0c397e68d6a37177ba1c7b6b67132cc04c0556fb892ee7e806710
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -66,7 +66,7 @@ about:
   home: https://github.com/ulmo-dev/ulmo
   license: BSD-3-Clause
   license_file: LICENSE
-  summary: 'Clean, simple, and fast access to public hydrology and climatology data'
+  summary: Clean, simple, and fast access to public hydrology and climatology data
   doc_url: http://ulmo.readthedocs.io/
   dev_url: https://github.com/ulmo-dev/ulmo/
 
