@@ -11,29 +11,25 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - appdirs
     - beautifulsoup4
     - future
     - geojson
     - isodate
     - lxml >=4.2.3
-    - mock
     - numpy
     - pandas
-    - pytables
-    - pytest
+    - python
     - requests
     - suds-jurko
-    - freezegun
-    - html5lib <=0.9999999
 
 test:
   imports:
@@ -46,7 +42,6 @@ test:
     - ulmo.cuahsi
     - ulmo.cpc.drought
     - ulmo.ncdc.gsod
-    - ulmo.usgs.eddn
     - ulmo.ncdc.cirs
     - ulmo.twc
     - ulmo.cuahsi.his_central
@@ -61,6 +56,10 @@ test:
     - ulmo.cdec
     - ulmo.nasa
     - ulmo.lcra
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/ulmo-dev/ulmo
