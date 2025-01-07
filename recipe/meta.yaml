@@ -5,20 +5,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/u/ulmo/ulmo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/u/ulmo/ulmo-{{ version }}.tar.gz
   sha256: 6ea36b9758d0c397e68d6a37177ba1c7b6b67132cc04c0556fb892ee7e806710
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - appdirs
     - beautifulsoup4
     - future
@@ -27,7 +28,7 @@ requirements:
     - lxml >=4.2.3
     - numpy
     - pandas
-    - python
+    - python >={{ python_min }}
     - requests
     - suds-jurko
 
@@ -60,6 +61,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ulmo-dev/ulmo
